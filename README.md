@@ -17,7 +17,24 @@ https://sandhya-sridar.github.io/medcare/
 
 ## Deployment
 
-This repository includes a GitHub Actions workflow that automatically builds and deploys the Flutter web app whenever code is pushed to `main`.
+This repository includes a GitHub Actions workflow for GitHub Pages, and it is also configured for Netlify deployment.
+
+### Netlify deployment
+
+This repo now includes:
+
+- `netlify.toml` to tell Netlify to publish `build/web`
+- a Flutter web build command with `--base-href /`
+- SPA rewrite rules so refreshing routes does not return a 404
+
+Use these settings in Netlify if you connect the GitHub repository:
+
+- Build command: `flutter build web --release --base-href /`
+- Publish directory: `build/web`
+
+If Netlify does not already have Flutter available in your build environment, use a Flutter-enabled build image or add a setup step in Netlify before running the build.
+
+### GitHub Pages deployment
 
 ### One-time GitHub setup
 
