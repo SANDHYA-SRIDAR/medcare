@@ -1,16 +1,56 @@
-# medcare
+# MedCare
 
-A new Flutter project.
+MedCare is a Flutter application for medication reminders, caregiver coordination, health tracking, and emergency assistance.
 
-## Getting Started
+## Cross-platform URL
 
-This project is a starting point for a Flutter application.
+This project can be deployed as a Flutter web app and opened from any modern browser on:
 
-A few resources to get you started if this is your first Flutter project:
+- Windows
+- macOS
+- iPhone and iPad
+- Android phones and tablets
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Once GitHub Pages is enabled for this repository, the app URL will be:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://sandhya-sridar.github.io/medcare/
+
+## Deployment
+
+This repository includes a GitHub Actions workflow that automatically builds and deploys the Flutter web app whenever code is pushed to `main`.
+
+### One-time GitHub setup
+
+1. Open the repository on GitHub.
+2. Go to `Settings` > `Pages`.
+3. Set the source to `GitHub Actions`.
+4. Push this workflow to `main`.
+5. Wait for the `Deploy Flutter Web` workflow to finish.
+
+After the workflow completes, GitHub Pages will serve the app at the URL above.
+
+## Local development
+
+Install dependencies:
+
+```bash
+flutter pub get
+```
+
+Run locally in Chrome:
+
+```bash
+flutter run -d chrome
+```
+
+Create a production web build:
+
+```bash
+flutter build web --release
+```
+
+## Notes
+
+- This deployment path publishes the web app, not native App Store or Play Store binaries.
+- If you later want installable native builds, you will still create separate Android, iOS, Windows, and macOS releases.
+- The current app builds successfully for the web target.
