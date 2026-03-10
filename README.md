@@ -24,15 +24,15 @@ This repository includes a GitHub Actions workflow for GitHub Pages, and it is a
 This repo now includes:
 
 - `netlify.toml` to tell Netlify to publish `build/web`
-- a Flutter web build command with `--base-href /`
+- `netlify-build.sh` to install Flutter during the Netlify build
 - SPA rewrite rules so refreshing routes does not return a 404
 
 Use these settings in Netlify if you connect the GitHub repository:
 
-- Build command: `flutter build web --release --base-href /`
+- Build command: `bash ./netlify-build.sh`
 - Publish directory: `build/web`
 
-If Netlify does not already have Flutter available in your build environment, use a Flutter-enabled build image or add a setup step in Netlify before running the build.
+The build script installs the stable Flutter SDK inside the Netlify Linux build environment before running the web build.
 
 ### GitHub Pages deployment
 
